@@ -79,7 +79,7 @@ export function Prediction({ prediction, showLinkToNewScribble = false, isProces
     //     console.log("MY BLOG " + JSON.stringify(myBlob))
     //     return uploadArtToIpfs(myBlob)
     //   });
-    const blob = new Blob([prediction.output[1]], { type: 'image/png' })
+    const blob = new Blob([prediction.output[1]], {type: 'image/png'})
     console.log("BLOBERI: " + JSON.stringify(prediction.testing))
     return uploadArtToIpfs(blob)
     console.log("IMAGERONI: " + imageroni)
@@ -89,7 +89,7 @@ export function Prediction({ prediction, showLinkToNewScribble = false, isProces
     try {
 
       const nftstorage = new NFTStorage({
-        token: process.env.nft_storage_API,
+        token: process.env.NEXT_PUBLIC_NFT_STORAGE_API
       })
 
 
@@ -107,6 +107,23 @@ export function Prediction({ prediction, showLinkToNewScribble = false, isProces
         image: file,
       });
       return cleanupIPFS(store.data.image.href);
+
+      const imgUrl = await axios.post('https://api.nft.storage/upload', {
+        name: 'AI NFT',
+        description: 'AI Generated NFT',
+        url: prediction.output[1]
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      }
+      ).then((response) => {
+        const ipfsHash = response.data.value.cid;
+        const ipfsLink = `https://ipfs.io/ipfs/${ipfsHash}`;
+        return ipfsLink
+      })
+
+      return imgUrl;
     } catch (err) {
       console.log(err);
       return null;
@@ -145,7 +162,7 @@ export function Prediction({ prediction, showLinkToNewScribble = false, isProces
         },
         {
           headers: {
-            Authorization: process.env.nft_port_API,
+            Authorization: process.env.NEXT_PUBLIC_NFT_PORT_API,
           },
         }
       );
