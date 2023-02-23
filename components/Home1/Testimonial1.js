@@ -62,7 +62,7 @@ export default function Testimonial1() {
                     <div className="row">
                         <div className="col-xl-12">
                             <div className="section-wrapper">
-                                <h2 className="section-title">I'd put some previews here<br /> with links to them</h2>
+                                <h2 className="section-title">Id put some previews here<br /> with links to them</h2>
                             </div>
                         </div>
                     </div>
