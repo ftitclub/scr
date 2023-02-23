@@ -11,7 +11,7 @@ import 'swiper/css/scrollbar';
 export default function Testimonial1() {
     const testimonial = [
         {
-            message: "Matie boy it&#39;s your round amongst bodge vagabond absolutely bladdered crikey well off his nut have it, goal you mug loo don&#39;t super.",
+            message: "Matie boy your round amongst bodge vagabond absolutely bladdered crikey well off his nut have it, goal you mug loo  super.",
             img: (
                 <Image
                     src="/img/testimonial/test1.jpg"
@@ -24,7 +24,7 @@ export default function Testimonial1() {
             designation: "Ui/Ux Designer"
         },
         {
-            message: "Matie boy it&#39;s your round amongst bodge vagabond absolutely bladdered crikey well off his nut have it, goal you mug loo don&#39;t super.",
+            message: "Matie boy iyour round amongst bodge vagabond absolutely bladdered crikey well off his nut have it, goal you mug loo;t super.",
             img: (
                 <Image
                     src="/img/testimonial/test2.jpg"
@@ -37,7 +37,7 @@ export default function Testimonial1() {
             designation: "Ui/Ux Designer"
         },
         {
-            message: "Matie boy it&#39;s your round amongst bodge vagabond absolutely bladdered crikey well off his nut have it, goal you mug loo don&#39;t super.",
+            message: "Matie boy itour round amongst bodge vagabond absolutely bladdered crikey well off his nut have it, goal you mug loo ;t super.",
             img: (
                 <Image
                     src="/img/testimonial/test3.jpg"

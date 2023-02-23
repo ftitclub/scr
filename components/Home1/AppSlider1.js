@@ -35,7 +35,7 @@ export default function AppSlider1() {
                     <img className="shape11" src="/img/shape/shape5.png" alt="" />
                   </div>
                   <h2 className="hero-two-title">Artify <br /> bla bla.</h2>
-                  <p>Charles tosser quaint twit bamboozled burke brown bread I naff I <br /> don&#39;t want no agro
+                  <p>Charles tosser quaint twit bamboozled burke brown bread I naff I <br /> t want no agro
                     say blimey.!!</p>
                   <div className="slider-btn">
                     <Link legacyBehavior href="/draw"><a className="btn-outline">Try our App</a></Link>
