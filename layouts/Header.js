@@ -18,7 +18,7 @@ export default function Header() {
                         <div className="row align-items-center">
                             <div className="col-xl-2 col-lg-2 col-md-7 col-10 d-flex align-items-center">
                                 <div className="logo">
-                                    <Link legacyBehavior href="/"><a> <img src="/img/logo/logo.png" alt="" /> </a></Link>
+                                    <Link legacyBehavior href="/"><a> <img src="/img/logo/logo.png" style={{height: "80px"}} alt="" /> </a></Link>
                                 </div>
                             </div>
                             <div className="col-xl-10 col-lg-10 col-md-4 col-8 d-none d-md-block">

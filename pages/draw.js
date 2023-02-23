@@ -100,7 +100,7 @@ export default function Draw() {
         <title>{pkg.appName}</title>s
       </Head>
       <Header style1 style={{paddingBottom: '120px !important;'}} />
-      <main className="container max-w-[1024px] mx-auto p-5 !pt-32 h-[90vh]">
+      <main className="container max-w-[1024px] mx-auto p-5 !pt-32 h-[90vh]" style={{padding: "20px !important;", paddingTop: "120px !important"}}>
         <div className="container max-w-[512px] mx-auto">
           <hgroup>
             <h1 className="text-center text-5xl font-bold m-4">

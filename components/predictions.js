@@ -17,12 +17,12 @@ export default function Predictions({ predictions, submissionCount }) {
   if (submissionCount === 0) return;
 
   return (
-    <section className="w-full my-10">
-      <h2 className="text-center text-3xl font-bold m-6">Results</h2>
+    <section className="!w-full !my-10">
+      <h2 className="!text-center !text-3xl !font-bold !m-6">Results</h2>
 
       {submissionCount > Object.keys(predictions).length && (
-        <div className="pb-10 mx-auto w-full text-center">
-          <div className="pt-10" ref={scrollRef} />
+        <div className="!pb-10 !mx-auto !w-full !text-center">
+          <div className="!pt-10" ref={scrollRef} />
           <Loader />
         </div>
       )}
@@ -47,7 +47,7 @@ export function Prediction({ prediction, showLinkToNewScribble = false }) {
   const [linkCopied, setLinkCopied] = useState(false);
 
   const copyLink = () => {
-    const url = window.location.origin + "/scribbles/" + prediction.id;
+    const url = window.location.origin + "/artifacts/" + prediction.id;
     copy(url);
     setLinkCopied(true);
   };
@@ -64,33 +64,33 @@ export function Prediction({ prediction, showLinkToNewScribble = false }) {
   if (!prediction) return null;
 
   return (
-    <div className="mt-6 mb-12">
-      <div className="shadow-lg border my-5 p-5 bg-white flex">
-        <div className="w-1/2 aspect-square relative border">
+    <div className="!mt-6 !mb-12">
+      <div className="!shadow-lg border !my-5 !p-5 !bg-white flex">
+        <div className="!w-1/2 !aspect-square !relative !border">
           <img
             src={prediction.input.image}
-            alt="input scribble"
-            className="w-full aspect-square"
+            alt="input art"
+            className="!w-full !aspect-square"
           />
         </div>
-        <div className="w-1/2 aspect-square relative">
+        <div className="!w-1/2 !aspect-square !relative">
           {prediction.output?.length ? (
             <img
               src={prediction.output[prediction.output.length - 1]}
               alt="output image"
-              className="w-full aspect-square"
+              className="!w-full !aspect-square"
             />
           ) : (
-            <div className="grid h-full place-items-center">
+            <div className="!grid !h-full !place-items-center">
               <Loader />
             </div>
           )}
         </div>
       </div>
-      <div className="text-center px-4 opacity-60 text-xl">
+      <div className="!text-center !px-4 !opacity-60 !text-xl">
         &ldquo;{prediction.input.prompt}&rdquo;
       </div>
-      <div className="text-center py-2">
+      <div className="!text-center !py-2">
         <button className="lil-button" onClick={copyLink}>
           <CopyIcon className="icon" />
           {linkCopied ? "Copied!" : "Copy link"}
@@ -100,7 +100,7 @@ export function Prediction({ prediction, showLinkToNewScribble = false }) {
           <Link href="/">
             <button className="lil-button" onClick={copyLink}>
               <PlusCircleIcon className="icon" />
-              Create a new scribble
+              Create new art
             </button>
           </Link>
         )}

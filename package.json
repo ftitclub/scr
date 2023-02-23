@@ -1,9 +1,9 @@
 {
-  "name": "scribble-diffusion",
-  "description": "Dusti Private Printing",
-  "appName": "Scribble Diffusion",
-  "appSubtitle": "Dusti Private Printing",
-  "appMetaDescription": "Dusti Private Printing",
+  "name": "artify",
+  "description": "Art for Everyone",
+  "appName": "Artify",
+  "appSubtitle": "Art for Everyone",
+  "appMetaDescription": "Art for Everyone",
   "version": "1.0.0",
   "private": true,
   "scripts": {

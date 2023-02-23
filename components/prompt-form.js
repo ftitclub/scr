@@ -32,7 +32,7 @@ export default function PromptForm({
         />
 
         <button
-          className={`bg-black text-white rounded-r-md text-small inline-block px-5 py-3 flex-none ${
+          className={`bg-black text-white rounded-r-md text-small inline-block !px-5 !py-3 flex-none ${
             disabled ? "opacity-20 cursor-not-allowed	" : ""
           }`}
           type="submit"
