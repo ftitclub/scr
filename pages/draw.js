@@ -26,6 +26,8 @@ export default function Draw() {
   const [seed] = useState(seeds[Math.floor(Math.random() * seeds.length)]);
   const [initialPrompt] = useState(seed.prompt);
   const [scribble, setScribble] = useState(null);
+  const [file, setFile] = useState(null);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -99,8 +101,8 @@ export default function Draw() {
         />
         <title>{pkg.appName}</title>s
       </Head>
-      <Header style1 style={{paddingBottom: '120px !important;'}} />
-      <main className="container max-w-[1024px] mx-auto p-5 !pt-32 h-[90vh]" style={{padding: "20px !important;", paddingTop: "120px !important"}}>
+      <Header style1 style={{ paddingBottom: '120px !important;' }} />
+      <main className="container max-w-[1024px] mx-auto p-5 !pt-32 h-[90vh]" style={{ padding: "20px !important;", paddingTop: "120px !important" }}>
         <div className="container max-w-[512px] mx-auto">
           <hgroup>
             <h1 className="text-center text-5xl font-bold m-4">
@@ -132,6 +134,7 @@ export default function Draw() {
           predictions={predictions}
           isProcessing={isProcessing}
           submissionCount={submissionCount}
+          file={file}
         />
       </main>
 
