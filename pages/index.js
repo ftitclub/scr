@@ -1,3 +1,4 @@
+import Testimonials from 'components/Home1/Testimonials'
 import Link from 'next/link'
 import AppDetails1 from '../components/Home1/AppDetails1'
 import AppSlider1 from '../components/Home1/AppSlider1'
@@ -17,8 +18,7 @@ export default function Home() {
         <AppSlider1/>
         <Features1/>
         <FeaturesContent/>
-        <Team1/>
-        <AppDetails1/>
+        <Testimonials/>
         <Download1/>
         <Testimonial1/>
         <Try1/>

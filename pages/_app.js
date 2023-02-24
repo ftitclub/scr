@@ -6,8 +6,6 @@ import '../public/css/responsive.css'
 import "../styles/globals.css";
 import 'react-toastify/dist/ReactToastify.css';
 
-
-import { Analytics } from '@vercel/analytics/react';
 import { ToastContainer } from 'react-toastify'
 
 function MyApp({ Component, pageProps }) {
