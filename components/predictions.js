@@ -9,7 +9,7 @@ import axios from "axios";
 import { NFTStorage } from "nft.storage";
 
 
-export default function Predictions({ predictions, submissionCount, isProcessing }) {
+export default function Predictions({ predictions, submissionCount, isProcessing, shouldShowMint }) {
   console.log(JSON.stringify(predictions))
   const scrollRef = useRef(null);
 
@@ -41,14 +41,17 @@ export default function Predictions({ predictions, submissionCount, isProcessing
               submissionCount == Object.keys(predictions).length && (
                 <div ref={scrollRef} />
               )}
-            <Prediction prediction={prediction} isProcessing={isProcessing} />
+            <Prediction prediction={prediction} isProcessing={isProcessing} shouldShowMint={shouldShowMint}/>
           </Fragment>
         ))}
     </section>
   );
 }
 
-export function Prediction({ prediction, showLinkToNewScribble = false, isProcessing }) {
+export function Prediction({ prediction, showLinkToNewScribble = false, isProcessing, shouldShowMint }) {
+
+
+  console.log(shouldShowMint)
 
   // MINT PART
   //mint part ==============================
@@ -220,12 +223,13 @@ export function Prediction({ prediction, showLinkToNewScribble = false, isProces
       <div className="!text-center !px-4 !opacity-60 !text-xl">
         &ldquo;{prediction.input.prompt}&rdquo;
       </div>
+      {shouldShowMint && <p>Mintss</p>}
       <div className="!text-center !py-2">
         <button className="lil-button" onClick={copyLink}>
           <CopyIcon className="icon" />
           {linkCopied ? "Copied!" : "Copy link"}
         </button>
-        {!isProcessing && <button
+        {(shouldShowMint && !isProcessing )&& <button
           className="bg-black text-white rounded-md p-2"
           onClick={() => {
             setModalOpen(true);
@@ -249,10 +253,6 @@ export function Prediction({ prediction, showLinkToNewScribble = false, isProces
             <h1 className="text-xl mb-4 font-bold text-purple-500">
               Do you Want to add custom details?
             </h1>
-            <p className="text-sm mb-4 text-slate-500">
-              If you dont want to add custom details, you can mint the NFT
-              and AI withh generate a random name and description for you.
-            </p>
             <input
               className="border-2 border-sky-200 rounded-md p-2 w-full md:w-72"
               onChange={(e) => setName(e.target.value)}

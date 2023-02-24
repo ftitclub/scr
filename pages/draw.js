@@ -135,6 +135,7 @@ export default function Draw() {
           isProcessing={isProcessing}
           submissionCount={submissionCount}
           file={file}
+          shouldShowMint={true}
         />
       </main>
 

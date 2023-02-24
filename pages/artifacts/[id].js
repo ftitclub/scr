@@ -1,4 +1,5 @@
 import { Prediction } from "components/predictions";
+import Header from "layouts/Header";
 import Head from "next/head";
 import pkg from "../../package.json";
 
@@ -18,8 +19,9 @@ export default function Scribble({ prediction, baseUrl }) {
           content={`${baseUrl}/api/og?id=${prediction.id}`}
         />
       </Head>
-      <main className="container max-w-[1024px] mx-auto p-5">
-        <Prediction prediction={prediction} showLinkToNewScribble={true} />
+      <Header style1 style={{ paddingBottom: '120px !important;' }} />
+      <main className="container max-w-[1024px] mx-auto p-5 !pt-40">
+        <Prediction prediction={prediction} showLinkToNewScribble={true} shouldShowMint={false}/>
       </main>
     </div>
   );
